@@ -52,7 +52,8 @@ risk_score = fv.predict_volatility_spark(data, window=200)
 print("Max risk score:", risk_score.max())
 
 # 5. Visualize multifractal scaling
-fv.plot_multifractal(data[-150:])
+fv.plot_multifractal(data[-150:])```
+
 📈 Key Insights You Can Gain
 rolling_hurst()
 Rising Hurst → trending market; Falling Hurst → mean-reverting or unstable
