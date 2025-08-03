@@ -3,8 +3,8 @@
 Detect hidden market regimes using **multifractal scaling** and **Hurst dynamics**.  
 `fractvol` brings advanced physics-based time series analysis to finance.
 
-```python
-import fractvol as fv
+
+'import fractvol as fv
 import yfinance as yf
 
 data = yf.download("SPY")['Close'].pct_change().dropna()
@@ -20,9 +20,9 @@ regimes = fv.detect_regime_change(sigs)
 risk_score = fv.predict_volatility_spark(data)
 
 # Visualize
-fv.plot_multifractal(data[-150:])# fractvol – Fractal Volatility Signatures
+fv.plot_multifractal(data[-150:])# fractvol – Fractal Volatility Signatures'
 
-📊 **Detect hidden market regimes using multifractal scaling and volatility geometry.**  
+# Detect hidden market regimes using multifractal scaling and volatility geometry.
 `fractvol` is a lightweight Python package that applies **physics-inspired fractal analysis** to financial time series, revealing hidden structures in volatility that traditional models miss.
 
 Unlike standard volatility tools (e.g., GARCH, rolling std), `fractvol` analyzes how price fluctuations **scale across time horizons** — capturing memory, persistence, and market fragility through the lens of **multifractal dynamics**.
@@ -52,7 +52,7 @@ This allows you to:
 
 ## 🚀 Quick Start
 
-```python
+python
 import fractvol as fv
 import yfinance as yf
 
