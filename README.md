@@ -67,7 +67,8 @@ plot_multifractal()
 See how returns scale across time — a fingerprint of market dynamics
 
 💡 Example Insight:
-Before major drawdowns (e.g., 2020 crash, 2022 bear market), the multifractal structure of markets often collapses — becoming less complex and more fragile. fractvol detects this loss of multifractality as a rising risk score, giving you an early heads-up.
+Before major drawdowns (e.g., 2020 crash, 2022 bear market), the multifractal structure of markets often collapses — becoming less complex and more fragile.
+fractvol detects this loss of multifractality as a rising risk score, giving you an early heads-up.
 
 pip install fractvol
 
