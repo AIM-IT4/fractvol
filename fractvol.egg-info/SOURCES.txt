@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+fractvol/__init__.py
+fractvol/core.py
+fractvol/detect.py
+fractvol/signal.py
+fractvol/visualize.py
+fractvol.egg-info/PKG-INFO
+fractvol.egg-info/SOURCES.txt
+fractvol.egg-info/dependency_links.txt
+fractvol.egg-info/requires.txt
+fractvol.egg-info/top_level.txt
+tests/test_core.py

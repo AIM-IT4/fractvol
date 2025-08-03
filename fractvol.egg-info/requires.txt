@@ -1,0 +1,18 @@
+numpy
+scipy
+
+[:extra == "detect"]
+scikit-learn
+
+[:extra == "viz"]
+matplotlib
+
+[detect]
+scikit-learn
+
+[dev]
+pytest
+jupyter
+
+[viz]
+matplotlib

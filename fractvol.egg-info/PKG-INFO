@@ -1,0 +1,58 @@
+Metadata-Version: 2.4
+Name: fractvol
+Version: 0.1.0
+Summary: Fractal Volatility Signatures for detecting market regimes using multifractal analysis.
+Author-email: Amit Kumar Jha <jha.8@alumni.iitj.ac.in>
+License: MIT
+Project-URL: Homepage, https://github.com/AIM-IT4/fractvol
+Project-URL: Repository, https://github.com/AIM-IT4/fractvol
+Project-URL: Issues, https://github.com/AIM-IT4/fractvol/issues
+Keywords: finance,volatility,fractal,hurst,regime,quant,trading
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Financial and Insurance Industry
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Scientific/Engineering :: Mathematics
+Classifier: Topic :: Office/Business :: Financial :: Investment
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: scipy
+Requires-Dist: matplotlib; extra == "viz"
+Requires-Dist: scikit-learn; extra == "detect"
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: jupyter; extra == "dev"
+Provides-Extra: viz
+Requires-Dist: matplotlib; extra == "viz"
+Provides-Extra: detect
+Requires-Dist: scikit-learn; extra == "detect"
+Dynamic: license-file
+
+# fractvol – Fractal Volatility Signatures
+
+Detect hidden market regimes using **multifractal scaling** and **Hurst dynamics**.  
+`fractvol` brings advanced physics-based time series analysis to finance.
+
+```python
+import fractvol as fv
+import yfinance as yf
+
+data = yf.download("SPY")['Close'].pct_change().dropna()
+
+# Rolling fractal analysis
+hursts = fv.rolling_hurst(data, window=100)
+
+# Detect regime shifts
+sigs = [fv.fractal_signature(data[i:i+200]) for i in range(0, len(data)-200, 50)]
+regimes = fv.detect_regime_change(sigs)
+
+# Predict volatility spikes
+risk_score = fv.predict_volatility_spark(data)
+
+# Visualize
+fv.plot_multifractal(data[-150:])
