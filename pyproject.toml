@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fractvol"
+description = "Fractal Volatility Signatures for detecting market regimes using multifractal analysis."
+readme = "README.md"
+authors = [{name = "Amit Kumar Jha", email = "jha.8@alumni.iitj.ac.in"}]
+license = {text = "MIT"}
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Financial and Insurance Industry",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Topic :: Office/Business :: Financial :: Investment"
+]
+keywords = ["finance", "volatility", "fractal", "hurst", "regime", "quant", "trading"]
+dynamic = ["version"]
+dependencies = [
+    "numpy",
+    "scipy",
+    "matplotlib; extra == 'viz'",
+    "scikit-learn; extra == 'detect'"
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "jupyter"]
+viz = ["matplotlib"]
+detect = ["scikit-learn"]
+
+[project.urls]
+Homepage = "https://github.com/AIM-IT4/fractvol"
+Repository = "https://github.com/AIM-IT4/fractvol"
+Issues = "https://github.com/AIM-IT4/fractvol/issues"
+
+[tool.setuptools_scm]
